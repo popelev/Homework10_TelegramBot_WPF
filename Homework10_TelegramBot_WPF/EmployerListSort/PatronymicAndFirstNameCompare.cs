@@ -1,0 +1,22 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+using Homework10_TelegramBot_WPF.Model;
+
+namespace Homework10_TelegramBot_WPF.EmployerListSort
+{
+    public class PatronymicAndFirstNameCompare : IComparer<Employer>
+    {
+        public int Compare(Employer x, Employer y)
+        {
+            if (x.Patronymic.CompareTo(y.Patronymic) == 0)
+            {
+                return x.FirstName.CompareTo(y.FirstName);
+            }
+            else
+            {
+                return x.Patronymic.CompareTo(y.Patronymic);
+            }
+        }
+    }
+}
